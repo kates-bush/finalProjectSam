@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/50/Black_colour.jpg?utm_source=en.wikiquote.org&utm_campaign=index&utm_content=original);
+            }
+            a {
+                 color: white;
+                 text-decoration: none;
+            }
+                a:hover {
+                color: hotpink;
+            }
+            button:hover {
+                border-style: outset;
+                border-color: hotpink;
+                border-width: 5px 5px 5px 5px;
+            }
+            button {
+                padding: 0px;
+            }
+            nav {
+                text-align: center;
+                 font-family: Helvetica;
+                color: rgb(255, 255, 255);
+                font-size: 125%;
+                font-weight: 900;
+            }
+            img {
+                border: none;
+            }
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+            div {
+                 margin: 50px 50px 50px 50px;
+                 text-align: center;
+                 font-family: Century;
+                color: rgb(255, 255, 255);
+            }
+             ol {
+                 margin: 50px 50px 100px 50px;
+                 font-family: Helvetica;
+                color: rgb(255, 255, 255);
+                border-color: grey;
+                border-radius: 10px;
+                border-style: outset;
+                font-size: 125%;
+                font-weight: 900;
+            }
+            h1 {
+                font-family: Century;
+                color: rgb(255, 255, 255);
+                 animation: flicker 3s infinite alternate;
+                text-align: center; 
+                font-size: 400%;
+            }
+            @font-face {
+                font-family: Century;
+                src: url(https://www.fontsupply.com//fonts/CENTURY.TTF);
+            }
+            @font-face {
+                font-family: Helvetica;
+                src: url(https://freefontsfamily.com/download/helvetica-font);
+            }
+             h4 {
+                font-family: Century;
+                color: rgb(255, 255, 255);
+                font-style: italic;
+                text-align: center;
+                font-size: 150%;
+            }
+            @font-face {
+                font-family: Century;
+                src: url(https://www.fontsupply.com//fonts/CENTURY.TTF);
+            }
+            <!--Neon flicker animation code inspired from Reddit, just for cosmetic effect-->
+            .neonText {
+            animation: flicker 1.5s infinite alternate;
+            color: #f5c4e4;
+            }
+            @keyframes flicker {
+    
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+            text-shadow:
+            0 0 2px #fff,
+            0 0 9px #ffffff,
+            0 0 40px rgb(234, 39, 234);
+  
+            }
+  
+            20%, 24%, 55% {        
+            text-shadow: none;
+            }    
+        }
+        </style>
+        <title>Sam Mendelsohn | Music</title>
+        <nav>
+            <a href="./index.html">Home</a>
+        &ensp; 
+            <a href="./music.html">Music</a>
+        &ensp; 
+            <a href="./radio.html">Radio</a>
+        &ensp; 
+            <a href="./tv_film.html">TV + Film</a>
+        </nav>
+    </head>
+    <body>
+        <br>
+        <h1>Sam Mendelsohn</h1>
+        <h4>Music samples - hover to listen!</h4>
+        <div>All music produced and mixed by Sam. Mastered by Liz Meier (Tracks 1 and 2).</div>
+        <ol>
+            <li>Secaydia - Big Strong Man (2026 - Coming Soon)</li>
+            <button id="BSM"><img src="images\BSM.jpg" alt="" width="120px"></button>
+            <li>Ladybug - Potential (2025)</li>
+            <button id="POT"><img src="images\POT.jpg" alt="" width="120px"></button>
+            <li>Racoon Road - Lost Cause (2025)</li>
+            <button id="LOS"><img src="images\LOS.jpg" alt="" width="120px"></button>
+        </ol>
+        <script>
+            let BSMButton = document.querySelector("#BSM");
+        function playBSM() {
+            const BSMSound = new Audio("Audio/BIG STRONG MAN_MASTER_1.2.mp3");
+            BSMSound.play();
+            function stopBSM() {
+                BSMSound.pause();
+            }
+            BSMButton.addEventListener("mouseout", stopBSM);
+        }
+        BSMButton.addEventListener("mouseover", playBSM);
+
+            let POTButton = document.querySelector("#POT");
+        function playPOT() {
+            const POTSound = new Audio("Audio/POT.mp3");
+            POTSound.play();
+            function stopPOT() { 
+                POTSound.pause();
+            }
+            POTButton.addEventListener("mouseout", stopPOT);
+        }
+        POTButton.addEventListener("mouseover", playPOT);
+        
+            let LOSButton = document.querySelector("#LOS");
+        function playLOS() {
+            const LOSSound = new Audio("Audio/Racoon Road - Lost Cause MASTER 48K 091625 (1).mp3");
+            LOSSound.play();
+            function stopLOS() { 
+                LOSSound.pause();
+            }
+            LOSButton.addEventListener("mouseout", stopLOS);
+        }
+        LOSButton.addEventListener("mouseover", playLOS);
+        </script>
+    </body>
+</html>

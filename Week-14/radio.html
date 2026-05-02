@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/50/Black_colour.jpg?utm_source=en.wikiquote.org&utm_campaign=index&utm_content=original);
+            }
+            a {
+                 color: white;
+                 text-decoration: none;
+            }
+                a:hover {
+                color: hotpink;
+            }
+            button:hover {
+                border-style: outset;
+                border-color: hotpink;
+                border-width: 5px 5px 5px 5px;
+            }
+            button {
+                padding: 0px;
+            }
+            nav {
+                text-align: center;
+                 font-family: Helvetica;
+                color: rgb(255, 255, 255);
+                font-size: 125%;
+                font-weight: 900;
+            }
+            img {
+                border: none;
+            }
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+            div {
+                 margin: 50px 50px 50px 50px;
+                 text-align: center;
+                 font-family: Century;
+                color: rgb(255, 255, 255);
+            }
+             ul {
+                 margin: 50px 50px 100px 50px;
+                 font-family: Helvetica;
+                color: rgb(255, 255, 255);
+                border-color: grey;
+                border-radius: 10px;
+                border-style: outset;
+                font-size: 125%;
+                font-weight: 900;
+            }
+            h1 {
+                font-family: Century;
+                color: rgb(255, 255, 255);
+                 animation: flicker 3s infinite alternate;
+                text-align: center; 
+                font-size: 400%;
+            }
+            @font-face {
+                font-family: Century;
+                src: url(https://www.fontsupply.com//fonts/CENTURY.TTF);
+            }
+            @font-face {
+                font-family: Helvetica;
+                src: url(https://freefontsfamily.com/download/helvetica-font);
+            }
+             h4 {
+                font-family: Century;
+                color: rgb(255, 255, 255);
+                font-style: italic;
+                text-align: center;
+                font-size: 150%;
+            }
+            @font-face {
+                font-family: Century;
+                src: url(https://www.fontsupply.com//fonts/CENTURY.TTF);
+            }
+            <!--Neon flicker animation code inspired from Reddit, just for cosmetic effect-->
+            .neonText {
+            animation: flicker 1.5s infinite alternate;
+            color: #f5c4e4;
+            }
+            @keyframes flicker {
+    
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+            text-shadow:
+            0 0 2px #fff,
+            0 0 9px #ffffff,
+            0 0 40px rgb(234, 39, 234);
+  
+            }
+  
+            20%, 24%, 55% {        
+            text-shadow: none;
+            }    
+        }
+        </style>
+        <title>Sam Mendelsohn | Radio</title>
+        <nav>
+            <a href="./index.html">Home</a>
+        &ensp; 
+            <a href="./music.html">Music</a>
+        &ensp; 
+            <a href="./radio.html">Radio</a>
+        &ensp; 
+            <a href="./tv_film.html">TV + Film</a>
+        </nav>
+    </head>
+    <body>
+        <br>
+        <h1>Sam Mendelsohn</h1>
+        <h4>Radio samples - hover to listen!</h4>
+        <div>Aired on WFAN 101.9 FM, 7/13/2025</div>
+        <ul>
+            <li>WFAN Radio - Ad</li>
+            <button id="AD1"><img src="images\WFANLOGO.jpg" alt="" width="120px"></button>
+            <li>WFAN Radio - Jingle</li>
+            <button id="JIN"><img src="images\WFANLOGO.jpg" alt="" width="120px"></button>
+        </ul>
+        <script>
+            let AD1Button = document.querySelector("#AD1");
+        function playAD1() {
+            const AD1Sound = new Audio("Audio/WFANAD.mp3");
+            AD1Sound.play();
+            function stopAD1() { 
+                AD1Sound.pause();
+            }
+            AD1Button.addEventListener("mouseout", stopAD1);
+        }
+        AD1Button.addEventListener("mouseover", playAD1);
+
+        let JINButton = document.querySelector("#JIN");
+        function playJIN() {
+            const JINSound = new Audio("Audio/WFANJINGLE.wav");
+            JINSound.play();
+            function stopJIN() { 
+                JINSound.pause();
+            }
+            JINButton.addEventListener("mouseout", stopJIN);
+        }
+        JINButton.addEventListener("mouseover", playJIN);
+        </script>
+    </body>
+</html>
